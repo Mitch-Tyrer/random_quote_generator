@@ -30,7 +30,8 @@ var quotes = [
     },
     {
       quote: "Every man’s life ends the same way. It is only the details of how he lived and how he died that distinguish one man from another." ,
-      source: "Ernest Hemingway"
+      source: "Ernest Hemingway",
+      year: "unknown"
     },
     {
       quote: "All we have to decide is what to do with the time that is given to us.",
@@ -46,7 +47,7 @@ var quotes = [
 ];
 
 
-var chosenQuote;
+
 
 
 
@@ -57,12 +58,11 @@ var chosenQuote;
      `quotes` array.
 ***/
 const getRandomQuote = (arr) => {
-  let randomNumber = Math.floor(Math.random() * arr.length) + 1;
-  chosenQuote = arr[randomNumber]
-  console.log(chosenQuote);
+  let randomNumber = Math.floor(Math.random() * arr.length);
+  return arr[randomNumber];
+  
 }
 
-getRandomQuote(quotes);
 
 
 
@@ -75,6 +75,22 @@ getRandomQuote(quotes);
      they are added to the HTML string.
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+const printQuote = () => {
+    let curQuote = getRandomQuote(quotes);
+    let output = document.getElementById('quote-box');
+    let html = '';
+    html+= '<p  class="quote">' + curQuote.quote + '</p>';
+    html+= '<p class="source">' + curQuote.source + '</p>';
+      if(curQuote.hasOwnProperty('citation')){
+        html += '<span class="citation">' + curQuote.citation + '</span>';
+      }
+      if(curQuote.hasOwnProperty('year')){
+        html += '<span class="year">' + curQuote.year + '</span>';
+      }
+      
+
+    return output.innerHTML = html;
+}
 
 
 
@@ -86,7 +102,7 @@ getRandomQuote(quotes);
   comment.
 ***/
 
-/* document.getElementById('loadQuote').addEventListener("click", printQuote, false); */
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
