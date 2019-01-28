@@ -43,8 +43,10 @@ var quotes = [
       source: "Stephen King"
     },
 
-]
+];
 
+
+var chosenQuote;
 
 
 
@@ -54,7 +56,13 @@ var quotes = [
    - use the random number to `return` a random quote object from the 
      `quotes` array.
 ***/
+const getRandomQuote = (arr) => {
+  let randomNumber = Math.floor(Math.random() * arr.length) + 1;
+  chosenQuote = arr[randomNumber]
+  console.log(chosenQuote);
+}
 
+getRandomQuote(quotes);
 
 
 
@@ -78,7 +86,7 @@ var quotes = [
   comment.
 ***/
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+/* document.getElementById('loadQuote').addEventListener("click", printQuote, false); */
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
