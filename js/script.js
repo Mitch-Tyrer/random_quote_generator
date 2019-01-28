@@ -16,6 +16,35 @@ FSJS project 1 - A Random Quote Generator
       quote object.
 ***/
 
+var quotes = [
+    {
+      quote: "Choose a job you love, and you will never have to work a day in your life",
+      source: "Confucius"
+    },
+    {
+      quote: "But it ain’t about how hard you hit, it’s about how hard you can get hit and keep moving forward, how much can you take and keep moving forward",
+      source: "Rocky Balboa",
+      citation: "Rocky Balboa",
+      year: "2006"
+      
+    },
+    {
+      quote: "Every man’s life ends the same way. It is only the details of how he lived and how he died that distinguish one man from another." ,
+      source: "Ernest Hemingway"
+    },
+    {
+      quote: "All we have to decide is what to do with the time that is given to us.",
+      source: "Gandalf",
+      citation: "The Lord of the Rings: The Fellowship of the Ring",
+      year: "2001"
+    },
+    {
+      quote: "Monsters are real, and ghosts are real too. They live inside us, and sometimes, they win.",
+      source: "Stephen King"
+    },
+
+]
+
 
 
 
