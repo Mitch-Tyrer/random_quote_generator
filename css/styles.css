@@ -6,6 +6,7 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
+
 #quote-box {
   position: absolute;
   top: 20%;
@@ -53,6 +54,7 @@ body {
 .source:before {
   content: "—";
 }
+
 
 .citation {
   font-style: italic;

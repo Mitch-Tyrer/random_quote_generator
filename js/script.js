@@ -41,12 +41,18 @@ const getRandomQuote = (arr) => {
 
 }
 
-// generate random background color
+// Random Color Generator
 const randomColor = () => {
-    //grab a random number between 0 and 255
-    let randomRGB = Math.floor(Math.random() * 256);
+  // Generate a random number between 0 - 255;
+  let randomRGB = Math.floor(Math.random() * 256);
+  return randomRGB;
+
+}
+
+// generate random background color for each quote
+const randomBG = () => {
     //place random number into rgbs
-    let rgb = 'background-color: rgb(' + randomRGB + ', ' + randomRGB + ', ' + randomRGB + ')';
+    let rgb = 'background-color: rgb(' + randomColor() + ', ' + randomColor() + ', ' + randomColor() + ')';
     //apply rgb to body css
     let changeColor = document.querySelector('body');
     return changeColor.setAttribute('style', rgb);
@@ -56,18 +62,19 @@ const randomColor = () => {
 
 //Print quote to screen function
 const printQuote = () => {
-  randomColor();
+  randomBG();
   let curQuote = getRandomQuote(quotes);
   let output = document.getElementById('quote-box');
   let html = '';
   html += '<p  class="quote">' + curQuote.quote + '</p>';
-  html += '<p class="source">' + curQuote.source + '</p>';
+  html += '<p class="source">' + curQuote.source ;
   if (curQuote.hasOwnProperty('citation')) {
     html += '<span class="citation">' + curQuote.citation + '</span>';
   }
   if (curQuote.hasOwnProperty('year')) {
     html += '<span class="year">' + curQuote.year + '</span>';
   }
+  html += '</p>';
   return output.innerHTML = html;
 }
 
