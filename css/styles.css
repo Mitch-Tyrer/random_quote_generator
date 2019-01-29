@@ -69,6 +69,14 @@ body {
   content: ", ";
   font-style: normal;
 }
+.tag {
+  font-style: italic;
+}
+
+.tag:before {
+  content: ", ";
+  font-style: normal;
+}
 
 #loadQuote {
   position: fixed;
@@ -91,6 +99,7 @@ body {
 #loadQuote:focus {
   outline: none;
 }
+
 
 @media (max-width: 420px) {
   .quote {
